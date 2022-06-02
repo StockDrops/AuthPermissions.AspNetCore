@@ -75,6 +75,7 @@ namespace AuthPermissions.AspNetCore
         {
             setupData.Options.InternalData.AuthPAuthenticationType = AuthPAuthenticationTypes.OpenId;
             setupData.Services.SetupOpenAzureAdOpenId(settings);
+            setupData.Services.AddSingleton(settings);
 
             return setupData;
         }

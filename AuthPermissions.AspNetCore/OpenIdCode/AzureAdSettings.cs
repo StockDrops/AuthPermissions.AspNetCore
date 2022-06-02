@@ -13,13 +13,14 @@ namespace AuthPermissions.AspNetCore.OpenIdCode
         /// <param name="addNewUserIfNotPresent">If true and the logging in user isn't in the AuthP users, then a new AuthP user is created</param>
         /// <param name="authenticationSchemeName">Optional:
         /// Needs to be that same as used in AddAuthentication call - defaults to <see cref="OpenIdConnectDefaults.AuthenticationScheme"/></param>
+        /// <param name="emailClaimName"></param>
         /// <returns>AzureAdSettings</returns>
         public static AzureAdSettings AzureAdDefaultSettings(bool addNewUserIfNotPresent, 
-            string authenticationSchemeName = OpenIdConnectDefaults.AuthenticationScheme)
+            string authenticationSchemeName = OpenIdConnectDefaults.AuthenticationScheme, string emailClaimName = "preferred_username")
         {
             return new AzureAdSettings(
                 "http://schemas.microsoft.com/identity/claims/objectidentifier",
-                "preferred_username",
+                emailClaimName,
                 "name",
                 addNewUserIfNotPresent, authenticationSchemeName);
         }
