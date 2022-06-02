@@ -232,7 +232,7 @@ namespace AuthPermissions.AdminCode.Services
         /// <param name="userName">Either provide a userName or null. if null, then uses the current user's userName</param>
         /// <param name="roleNames">Either a list of rolenames or null. If null, then keeps its current rolenames.
         /// If the rolesNames collection only contains a single entry with the value <see cref="CommonConstants.EmptyTenantName"/>,
-        /// then the roles will be set to an empty collection.</param>
+        /// then the roles will be set to an empty collection. If not this will replace all the old roles with the provided roles.</param>
         /// <param name="tenantName">If null, then keeps current tenant. If it is <see cref="CommonConstants.EmptyTenantName"/> it will remove a tenant link.
         /// Otherwise the user will be linked to the tenant with that name.</param>
         /// <returns>status</returns>
